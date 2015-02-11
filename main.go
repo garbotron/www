@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/garbotron/donkeytownsfolk"
 	"github.com/garbotron/giddeongarber.info"
 	"github.com/garbotron/goshots"
 	"github.com/gorilla/mux"
@@ -22,6 +23,11 @@ func main() {
 	}
 
 	if err := goshots.Init(r); err != nil {
+		log.Fatal(err)
+		return
+	}
+
+	if err := donkeytownsfolk.Init(r); err != nil {
 		log.Fatal(err)
 		return
 	}
